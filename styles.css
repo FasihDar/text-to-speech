@@ -1,0 +1,146 @@
+body {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.togglr-text {
+  margin-bottom: 20px;
+}
+
+#toggleButton{
+  padding: 7px 12px;
+  background-color: #D35400;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.grid-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 230px;
+  border-radius: 4px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #D35400;
+  color: white;
+  padding: 8px;
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+.custom-text-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%; 
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.custom-text-popup h2 {
+  margin-top: 0;
+}
+
+.custom-text-popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.custom-text-popup select,
+.custom-text-popup textarea {
+  color: black;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-text-popup select {
+  background-color: #D35400;
+}
+.custom-text-popup button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #D35400;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-text-popup .close {
+  display: block;
+  background-color: #f8f9fa;
+  width: 30px;
+  float: right;
+  padding: 5px;
+  color: #494949;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-text-popup .close:hover {
+  background-color: #f8f9fa;
+}
+
+.custom-text-popup button:hover {
+  background-color: #ad4500;
+}
+
+@media only screen and (max-width: 768px) {
+  body{
+    padding: 0;
+  }
+  .grid-item img {
+    width: 100%;
+    height:auto;
+    border-radius: 4px;
+  }
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  }
+
+  .custom-text-popup {
+    width: 90%; 
+  }
+}
